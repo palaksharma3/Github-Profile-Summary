@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>GitHub Profile Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="page-header">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <div>
+        <h1>GitHub Profile Dashboard</h1>
+        <p class="introduction">Explore a developer's public repositories and primary languages.</p>
+      </div>
+    </header>
+
+    <section class="search-panel" aria-label="Search GitHub">
+      <form id="username-form" novalidate>
+        <label for="username">GitHub username</label>
+        <div class="search-controls">
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="e.g. octocat"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+            aria-describedby="username-hint status"
+            required
+          >
+          <button id="search-button" type="submit">Find repositories</button>
+        </div>
+        <p id="username-hint" class="input-hint">Enter a username, not a full profile URL. No sign-in needed.</p>
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true" data-state="idle">
+        Enter a GitHub username to get started.
+      </p>
+    </section>
+
+    <section id="results" class="results" aria-labelledby="results-title" aria-busy="false">
+      <div class="results-header">
+        <h2 id="results-title">Public repositories</h2>
+        <a id="profile-link" class="profile-link" target="_blank" rel="noopener noreferrer" hidden></a>
+      </div>
+      <p id="results-summary" class="results-summary">Repository names, descriptions, and their primary languages.</p>
+
+      <div id="empty-state" class="empty-state">
+        <svg class="empty-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M10 6h21v28H10a4 4 0 0 1-4-4V10a4 4 0 0 1 4-4Z"></path>
+          <path d="M10 6v20M6 30a4 4 0 0 1 4-4h21M16 12h9M16 17h6"></path>
+        </svg>
+        <h3 id="empty-title">Your repository list starts here</h3>
+        <p id="empty-message">Try octocat, or search a GitHub profile you know.</p>
+      </div>
+
+      <ul id="repository-list" class="repository-list"></ul>
+
+      <nav id="pagination" class="pagination" aria-label="Repository pages" hidden>
+        <button id="previous-button" class="secondary-button" type="button" disabled>Previous</button>
+        <span id="page-label">Page 1</span>
+        <button id="next-button" class="secondary-button" type="button" disabled>Next page</button>
+      </nav>
+    </section>
+
+    <footer>Public data only. GitHub links open in a new tab.</footer>
+  </main>
+</body>
+</html>
