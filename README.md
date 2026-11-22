@@ -24,7 +24,7 @@ JSON, and asynchronous requests.
 ## Run online
 
 
-[Open the dashboard](YOUR_GITHUB_PAGES_URL)
+(https://palaksharma3.github.io/Github-Profile-Summary/)
 
 1. Open the live dashboard in your browser.
 2. Enter a GitHub username, such as octocat.
